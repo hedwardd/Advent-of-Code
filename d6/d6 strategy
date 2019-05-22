@@ -1,0 +1,16 @@
+Input: Coordinates
+Output: Area of largest finite area of locations closest (manhattan) to a single coordinate
+
+Strategy 1:
+Map all coordinates in finite area, count numbers that don't appear infinite?
+
+Strategy 2:
+Sort coordinates, then iterate over area
+
+Strategy 3:
+Eliminate all coordinates along the outside (unbounded)
+
+Infinites:
+Strategy 1 for sorting out infinite:
+If they touch the edge, they're infinite
+

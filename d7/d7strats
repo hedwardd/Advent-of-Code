@@ -1,0 +1,61 @@
+Input: List of step requirements
+Outpu: List of steps in order
+
+Strategy 1 -- Dictionary of Steps and their Blockers
+Pros: You know the next steps is to 
+Cons:
+
+Step 1
+Create a dictionary of character inputs (Steps) where lookup values are a list of characters representing steps it's dependent on
+Ex:
+A -> C
+B -> A
+C -> null
+D -> A
+E -> B, D, F
+F -> C
+
+Step Order: C
+A -> null
+B -> A
+D -> A
+E -> B, D, F
+F -> null
+
+Step 2
+Measure number of blockers by recursively looping through
+
+Strategy 1A -- Dictionary of Steps, Their Blocked Status, and their Blockers
+Pros: 
+Cons: More complicated and hard to maintain
+
+Question: Dictionary?  Can you remove a value from a dictionary?  Can you have a null value as a dictionary?
+
+Strategy 2 -- Dictionary of Steps and what they're Blocking
+Ex:
+C -> A, F
+A -> B, D
+B -> E
+D -> A
+E -> B, D, F
+F -> C
+
+Step Order: C
+A -> null
+B -> A
+D -> A
+E -> B, D, F
+F -> null
+
+Strategy 3 -- Two Dictionaries that get updated simultaneously
+
+
+
+Decision: Strategy 1
+Strategy 1 -- Dictionary of Steps and their Blockers
+
+Step 1
+Create a dictionary of character inputs (Steps) where lookup values are a list of characters representing steps it's dependent on
+
+Step 2
+(Recursively or no) Move through dictionary by finding the first alphabetical step with no blockers, adding that to the output, and then removing it from any of the other blockers list
